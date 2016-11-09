@@ -5,7 +5,7 @@ public class QSort extends Sort {
 	public QSort()
 	{
 		Name = "Quick Sort";
-		Description = "Quick Sort is a super fast partition sort.";
+		Description = "Quick Sort is a super fast partition sort. Uses value of the middle index";
 	}
 	//
 	@Override

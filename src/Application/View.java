@@ -43,7 +43,7 @@ public class View extends JFrame implements WindowListener,ActionListener, Compo
 	public View()
 	{	
 		
-		//setting up inital size data.
+		//setting up initial size data.
 		int winX = 640;
 		int winY = 240;
 		Dimension winDim = new Dimension(winX,winY);
@@ -59,10 +59,10 @@ public class View extends JFrame implements WindowListener,ActionListener, Compo
 		modelList.add( new MyTableModel(new BubbleSort(),200));
 		modelList.add( new MyTableModel(new BubbleOptimized(),200));
 		modelList.add(new MyTableModel(new CocktailSort(),200));
+		modelList.add(new MyTableModel(new GnomeSort(),200));
 		modelList.add(new MyTableModel(new InsertionSort(),200));
 		modelList.add(new MyTableModel(new CombSort(),200));
 		modelList.add(new MyTableModel(new QSort(),200));
-		
 		//This sets up the tables in the GUI for each sort. Dynamic  
 		for(MyTableModel model : modelList)
 		{

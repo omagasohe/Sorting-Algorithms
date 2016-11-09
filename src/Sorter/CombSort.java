@@ -33,8 +33,6 @@ public class CombSort extends Sort {
 					swap(index,index+gap);
 					sorted = false;
 				}
-				
-				
 			}
 		}
 		return workingArray.clone();

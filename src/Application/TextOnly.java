@@ -22,10 +22,9 @@ public class TextOnly {
 		sortList.add(new BubbleSort());
 		sortList.add(new BubbleOptimized());
 		sortList.add(new CocktailSort());
-		sortList.add(new InsertionSort());
 		sortList.add(new GnomeSort());		
+		sortList.add(new InsertionSort());
 		sortList.add(new CombSort());
-
 		sortList.add(new QSort());
 		
 		for(@SuppressWarnings("unused") Sort s : sortList)
@@ -57,8 +56,16 @@ public class TextOnly {
 		{
 			System.out.printf("%-4d %-10s %-12s %-12s %-12s %-12s\n",inputs[i][0] ,"items","Sorted","Partial","Random","reverse");
 			for(int j = 0; j < sortList.size();j++)
-				System.out.printf("%-15s %-12.5f %-12.5f %-12.5f %-12.5f\n", sortList.get(j).getName(),results.get(j)[i][0],results.get(j)[i][1],results.get(j)[i][2],results.get(j)[i][3]);
+				System.out.printf("%-15s %-12.5f %-12.5f %-12.5f %-12.5f\n", extractName(sortList.get(j),15),results.get(j)[i][0],results.get(j)[i][1],results.get(j)[i][2],results.get(j)[i][3]);
 			System.out.printf("\n");
 		}
+	}
+	protected static String extractName(Sort mySort,int maxLength)
+	{
+		String name = mySort.getName();
+		if(name.length() <= maxLength)
+			return name;
+		else
+			return name.substring(0, 15);
 	}
 }

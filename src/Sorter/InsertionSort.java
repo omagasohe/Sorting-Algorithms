@@ -9,19 +9,19 @@ public class InsertionSort extends Sort {
 	
 	@Override
 	public int[] sort(int[] a) {
-		wa = a.clone();
-		int l = wa.length;
+		workingArray = a.clone();
+		int l = workingArray.length;
 		
-		for(int i = 1; i < l;i++)
+		for(int count = 1; count < l;count++)
 		{
-			int j = i;
-			while ( j>0 &&(wa[j] < wa[j-1]))
+			int index = count;
+			while ( index > 0 &&(workingArray[index] < workingArray[index-1]))
 			{
-				swap(j,j-1);
-				j--;
+				swap(index,index-1);
+				index--;
 			}
 		}
-		return wa;
+		return workingArray.clone();
 	}
 
 }

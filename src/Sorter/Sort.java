@@ -9,7 +9,7 @@ public abstract class Sort {
 	
 	protected String Name;
 	protected String Description;
-	int[] wa;
+	int[] workingArray;
 	/**
 	 * Runs the sort a specified number of times and returns the average execution time 
 	 * @param array Array to sort
@@ -57,8 +57,8 @@ public abstract class Sort {
 	public abstract int[] sort(int[] array);
 	protected void swap(int idx1,int idx2)
 	{
-		int tmp = wa[idx1];
-		wa[idx1] = wa[idx2];
-		wa[idx2] = tmp;
+		int tmp = workingArray[idx1];
+		workingArray[idx1] = workingArray[idx2];
+		workingArray[idx2] = tmp;
 	}
 }

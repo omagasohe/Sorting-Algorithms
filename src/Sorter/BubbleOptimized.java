@@ -10,30 +10,26 @@ public class BubbleOptimized extends Sort {
 	
 	@Override
 	public int[] sort(int[] a) {
-		wa = a.clone();
-		int l = wa.length;
+		workingArray = a.clone();
+		int end = workingArray.length;
 		//boolean swapped = false;
-		int s=0;
+		int swapIndex=0;
 		do
 		{
-			//swapped = false;
-			s=0;
-			for(int i = 1; i<l;i++)
+			swapIndex=0;
+			for(int index = 1; index<end;index++)
 			{
-				if(wa[i] < wa[i-1])
+				if(workingArray[index] < workingArray[index-1])
 				{
-					swap(i,i-1);
-					//swapped = true;
-					s=i;
+					swap(index,index-1);
+					swapIndex=index;
 				}
-
-				
 			}
 			
-			l = s;//l--;
+			end = swapIndex;
 		}
-		while(s>1);//swapped);
-		return wa.clone();
+		while(swapIndex>1);//swapped);
+		return workingArray.clone();
 	}
 
 }

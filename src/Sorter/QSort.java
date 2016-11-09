@@ -10,42 +10,43 @@ public class QSort extends Sort {
 	//
 	@Override
 	public int[] sort(int[] array) {
-		wa = array.clone();
+		workingArray = array.clone();
 		qsort(0,array.length-1);
-		return wa.clone();
+		return workingArray.clone();
 	}
 	
-	protected void qsort(int start, int end)
+	protected void qsort(int startOfSubArray, int endOfSubArray)
 	{
-		int s = start;
-		int e = end;
+		int startIndex = startOfSubArray;
+		int endIndex = endOfSubArray;
 		
-		int p = wa[s + ((e-s+1)/2)];
-		while(s <= e)
+		int pivot = workingArray[startIndex + ((endIndex-startIndex+1)/2)];
+		while(startIndex <= endIndex)
 		{
-			while(wa[s] < p)
+			while(workingArray[startIndex] < pivot)
 			{
 
-				s++;
+				startIndex++;
 			
 			}
-			while(wa[e] > p)
+			while(workingArray[endIndex] > pivot)
 			{
-				e--;	
+				endIndex--;	
 			}
 			
 			
             
-			if (s <= e) {
-                swap(s,e);
-                s++;
-                e--;
+			if (startIndex <= endIndex) {
+                swap(startIndex,endIndex);
+                startIndex++;
+                endIndex--;
             }
 		}
-		if(start < e)
-		qsort(start,e);
-		if(s<end)
-		qsort(s,end);
+		if(startOfSubArray < endIndex)
+		qsort(startOfSubArray,endIndex);
+		
+		if(startIndex<endOfSubArray)
+		qsort(startIndex,endOfSubArray);
 			
 	}
 

@@ -9,37 +9,37 @@ public class CocktailSort extends Sort {
 
 	@Override
 	public int[] sort(int[] a) {
-		wa = a.clone();
-		int s=0,e = wa.length-1;
+		workingArray = a.clone();
+		int startIndex=0,endIndex = workingArray.length-1;
 		boolean swapped = false;
 		
 		do
 		{
 		swapped = false;
 		
-		for(int i = s+1;i<=e;i++)
+		for(int index = startIndex+1;index<=endIndex;index++)
 		{
-			if(wa[i] < wa[i-1])
+			if(workingArray[index] < workingArray[index-1])
 			{
-				swap(i,i-1);
+				swap(index,index-1);
 				swapped = true;
 			}
 		}
-		e--;
-		for(int i = e;i>s;i--)  
+		endIndex--;
+		for(int index = endIndex;index>startIndex;index--)  
 		{
-			if(wa[i] < wa[i-1])
+			if(workingArray[index] < workingArray[index-1])
 			{
-				swap(i, i-1);
+				swap(index, index-1);
 				swapped = true;
 			}
 
 			
 		}
-		s++;
+		startIndex++;
 		
 		}while(swapped);
-		return wa.clone();
+		return workingArray.clone();
 	}
 
 }

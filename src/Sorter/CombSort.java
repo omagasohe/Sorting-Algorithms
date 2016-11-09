@@ -11,8 +11,8 @@ public class CombSort extends Sort {
 	@Override
 	public int[] sort(int[] array) 
 	{
-		wa = array.clone();
-		int gap = wa.length;
+		workingArray = array.clone();
+		int gap = workingArray.length;
 		double shrink = 1.3;
 		boolean sorted = false;
 		
@@ -26,17 +26,17 @@ public class CombSort extends Sort {
 				sorted=true;
 				gap = 1;
 			}
-			for(int i = 0; i+gap<wa.length;i++)
+			for(int index = 0; index+gap<workingArray.length;index++)
 			{
-				if(wa[i] > wa[i+gap])
+				if(workingArray[index] > workingArray[index+gap])
 				{
-					swap(i,i+gap);
+					swap(index,index+gap);
 					sorted = false;
 				}
 				
 				
 			}
 		}
-		return wa.clone();
+		return workingArray.clone();
 	}
 }

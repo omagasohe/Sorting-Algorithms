@@ -9,15 +9,15 @@ public class BubbleSort extends Sort {
 	}
 	@Override
 	public int[] sort(int[] a) {
-		wa = a.clone();
-		int lenght = wa.length;
+		workingArray = a.clone();
+		int lenght = workingArray.length;
 		
 		for(int cycle = 1; cycle < lenght; cycle++)
 			for(int index = 1; index < lenght; index++)
-				if(wa[index] < wa[index-1])
+				if(workingArray[index] < workingArray[index-1])
 					swap(index, index-1);
 				
-		return wa.clone();
+		return workingArray.clone();
 	}
 
 }
